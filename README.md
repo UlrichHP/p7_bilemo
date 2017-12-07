@@ -19,7 +19,7 @@ Clonez le repository GitHub et tapez les commandes suivantes :
 1. php bin/console doctrine:schema:create
 1. php bin/console doctrine:fixtures:load (si vous voulez utiliser les fixtures)
 
-La documentation de l'API est le fichier P7_doc et vous pouvez également le consulter en ligne à l'adresse /api/doc.
+La documentation de l'API est le fichier BileMo_doc et vous pouvez également le consulter en ligne à l'adresse /api/doc.
 
 Clone the GitHub repository and execute the following commands :
 1. Enter your database settings in app/config/parameters.yml
@@ -28,7 +28,7 @@ Clone the GitHub repository and execute the following commands :
 1. php bin/console doctrine:schema:create
 1. php bin/console doctrine:fixtures:load (if you want to use fixtures)
 
-The API documentation is the file P7_doc and you can see it online /api/doc.
+The API documentation is the file BileMo_doc and you can see it online /api/doc.
 
 ## Symfony Standard Edition
 

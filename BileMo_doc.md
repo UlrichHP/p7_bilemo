@@ -1,15 +1,15 @@
 # Categories #
 
-## /api/categories ##
+## /categories ##
 
-### `GET` /api/categories ###
+### `GET` /categories ###
 
 _Get the list of all categories._
 
 
-## /api/categories/{id} ##
+## /categories/{id} ##
 
-### `GET` /api/categories/{id} ###
+### `GET` /categories/{id} ###
 
 _Get one category._
 
@@ -25,9 +25,9 @@ _Get one category._
 
 # Products #
 
-## /api/products ##
+## /products ##
 
-### `GET` /api/products ###
+### `GET` /products ###
 
 _Get the list of all products._
 
@@ -35,7 +35,7 @@ _Get the list of all products._
 
 keyword:
 
-  * Requirement: [a-zA-Z0-9]+
+  * Requirement: [a-zA-Z0-9]
   * Description: The keyword to search for.
 
 order:
@@ -57,9 +57,9 @@ offset:
   * Default: 0
 
 
-## /api/products/{id} ##
+## /products/{id} ##
 
-### `GET` /api/products/{id} ###
+### `GET` /products/{id} ###
 
 _Get one product._
 

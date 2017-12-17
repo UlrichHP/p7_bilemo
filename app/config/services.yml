@@ -33,3 +33,8 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    my_user_provider:
+        class: AppBundle\Security\UserProvider
+        arguments:
+            - '@doctrine.orm.default_entity_manager'

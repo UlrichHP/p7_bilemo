@@ -1,0 +1,37 @@
+<?php
+
+namespace AppBundle\Command;
+
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class CreateClientCommand extends ContainerAwareCommand
+{
+    protected function configure()
+    {
+        $this
+            ->setName('CreateClient')
+            ->setDescription('Create a client for this Oauth Server')
+            ->addOption('redirect_url', null, InputOption::VALUE_REQUIRED, 'Url redirection after authorization')
+        ;
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        if ($input->getOption('redirect_url')) {
+            $url = $input->getOption('redirect_url');
+        }
+
+        $clientManager = $this->getContainer()->get('fos_oauth_server.client_manager.default');
+        $client = $clientManager->createClient();
+        $client->setRedirectUris(array($url));
+        $client->setAllowedGrantTypes(array('token', 'authorization_code', 'password'));
+        $clientManager->updateClient($client);
+
+        $output->writeln("Added a new client with  client_id : <info>".$client->getPublicId()."</info> and client_secret : <info>".$client->getSecret()."</info>");
+    }
+
+}

@@ -18,16 +18,16 @@ class UserProvider implements UserProviderInterface
         $this->em = $em;
     }
 
-    public function loadUserByUsername($email)
+    public function loadUserByUsername($username)
     {
-        $user = $this->em->getRepository('AppBundle:User')->findOneByEmail($email);
+        $user = $this->em->getRepository('AppBundle:User')->findOneByUsername($username);
 
         if ($user) {
             return $user;
         }
 
         throw new UsernameNotFoundException(
-            sprintf('Username "%s" does not exist.', $email)
+            sprintf('Username "%s" does not exist.', $username)
         );
     }
 

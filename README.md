@@ -32,9 +32,9 @@ Comment avoir un Token :
 Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
 - client_id = CLIENT_ID
 - client_secret = CLIENT_SECRET
-- redirect_uri = REDIRECT_URI
+- redirect_uri = REDIRECT_URI (Optional)
 - grant_type = password
-- username = YOUR_EMAIL
+- username = USERNAME
 - password = PASSWORD
 
 Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de type Autorisation = 'Bearer ' + le token de l'utilisateur.
@@ -61,9 +61,9 @@ How to get a Token:
 Make a POST request on /oauth/v2/token with the following parameters:
 - client_id = CLIENT_ID
 - client_secret = CLIENT_SECRET
-- redirect_uri = REDIRECT_URI
+- redirect_uri = REDIRECT_URI (Optional)
 - grant_type = password
-- username = YOUR_EMAIL
+- username = USERNAME
 - password = PASSWORD
 
 To access the API, you have to send a request with a header Authorization = 'Bearer ' + the user's token.

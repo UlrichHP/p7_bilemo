@@ -13,58 +13,58 @@ In the UML folder, you can find the diagrams of this project.
 ## Installation
 
 Clonez le repository GitHub et tapez les commandes suivantes :
-1. Entrez vos identifiants de connexion à la base de données dans app/config/parameters.yml
-1. composer install
-1. php bin/console doctrine:database:create
-1. php bin/console doctrine:schema:create
-1. php bin/console doctrine:fixtures:load (si vous voulez utiliser les fixtures)
+- Entrez vos identifiants de connexion à la base de données dans app/config/parameters.yml
+- composer install
+- php bin/console doctrine:database:create
+- php bin/console doctrine:schema:create
+- php bin/console doctrine:fixtures:load (si vous voulez utiliser les fixtures)
 
 Pour créer un Client :
-1. php bin/console CreateClient --redirect_url=WEBSITE_URL
+- php bin/console CreateClient --redirect_url=WEBSITE_URL
 Vos identifiants d'API (client_id et client_secret) seront écrits en réponse.
 
 Comment créer un utilisateur :
-1. Voir BileMo_doc : /register
+- Voir BileMo_doc : /register
 
 Les méthodes d'autorisation de cette API sont : Implicit, Password et Authorization Code.
 
 Comment avoir un Token :
 Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
-1. client_id = CLIENT_ID
-1. client_secret = CLIENT_SECRET
-1. redirect_uri = REDIRECT_URI
-1. grant_type = password
-1. username = YOUR_EMAIL
-1. password = PASSWORD
+- client_id = CLIENT_ID
+- client_secret = CLIENT_SECRET
+- redirect_uri = REDIRECT_URI
+- grant_type = password
+- username = YOUR_EMAIL
+- password = PASSWORD
 
 Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de type Autorisation = 'Bearer ' + le token de l'utilisateur.
 
 La documentation de l'API se trouve dans le fichier BileMo_doc.md et vous pouvez également la consulter en ligne à l'adresse /api/doc.
 
 Clone the GitHub repository and execute the following commands :
-1. Enter your database settings in app/config/parameters.yml
-1. composer install
-1. php bin/console doctrine:database:create
-1. php bin/console doctrine:schema:create
-1. php bin/console doctrine:fixtures:load (if you want to use fixtures)
+- Enter your database settings in app/config/parameters.yml
+- composer install
+- php bin/console doctrine:database:create
+- php bin/console doctrine:schema:create
+- php bin/console doctrine:fixtures:load (if you want to use fixtures)
 
 To create a Client:
-1. php bin/console CreateClient --redirect_url=WEBSITE_URL
+- php bin/console CreateClient --redirect_url=WEBSITE_URL
 Your API credentials (client_id and client_secret) will be written in response.
 
 How to create a user:
-1. See BileMo_doc : /register
+- See BileMo_doc : /register
 
 The Authorizations type for this API are : Implicit, Password and Authorization Code.
 
 How to get a Token:
 Make a POST request on /oauth/v2/token with the following parameters:
-1. client_id = CLIENT_ID
-1. client_secret = CLIENT_SECRET
-1. redirect_uri = REDIRECT_URI
-1. grant_type = password
-1. username = YOUR_EMAIL
-1. password = PASSWORD
+- client_id = CLIENT_ID
+- client_secret = CLIENT_SECRET
+- redirect_uri = REDIRECT_URI
+- grant_type = password
+- username = YOUR_EMAIL
+- password = PASSWORD
 
 To access the API, you have to send a request with a header Authorization = 'Bearer ' + the user's token.
 

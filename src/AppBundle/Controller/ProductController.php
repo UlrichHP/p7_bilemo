@@ -65,7 +65,7 @@ class ProductController extends Controller
 
     /**
      * @Rest\Get(
-     *		path = "/products/{id}",
+     *		path = "/product/{id}",
      *		name = "get_product",
      *		requirements = {"id"="\d+"}
      * )

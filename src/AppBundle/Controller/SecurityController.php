@@ -31,6 +31,11 @@ class SecurityController extends FOSRestController
      * 		description = "User's email."
      * )
      * @Rest\RequestParam(
+     *		name = "username",
+     *		nullable = false,
+     * 		description = "User's username."
+     * )
+     * @Rest\RequestParam(
      *		name = "password",
      *		nullable = false,
      * 		description = "User's password."
@@ -69,6 +74,12 @@ class SecurityController extends FOSRestController
      *		name = "redirect_uri",
      *		description = "The url where Oauth server will be redirected."
      * )
+     * @Rest\RequestParam(
+     *		name = "role",
+     *      requirements = "ROLE_USER|ROLE_ADMIN",
+     *		nullable = false,
+     *		description = "Possibility to create an Admin who can delete users."
+     * )
      * @Doc\ApiDoc(
      * 		section = "User",
      *		resource = true,
@@ -79,9 +90,11 @@ class SecurityController extends FOSRestController
     {
         $user = new User();
         $user->setEmail($paramFetcher->get('email'));
+        $user->setUsername($paramFetcher->get('username'));
         $user->setPassword($encoder->encodePassword($user, $paramFetcher->get('password')));
         $user->setLastname($paramFetcher->get('lastname'));
         $user->setFirstname($paramFetcher->get('firstname'));
+        $user->setRoles(array($paramFetcher->get('role')));
         $errors = $this->get('validator')->validate($user);
         if (count($errors)) {
             $message = 'The JSON sent contains invalid data. Here are the errors you need to correct: ';
@@ -99,7 +112,7 @@ class SecurityController extends FOSRestController
             'client_id'		=> $paramFetcher->get('client_id'),
             'client_secret'	=> $paramFetcher->get('client_secret'),
             'grant_type'	=> $paramFetcher->get('grant_type'),
-            'username'		=> $user->getUsername(),
+            'username'		=> $user->getEmail(),
             'password'		=> $paramFetcher->get('password'),
             'redirect_uri'	=> $paramFetcher->get('redirect_uri')
         ]);

@@ -86,6 +86,11 @@ class User implements UserInterface
     private $firstname;
 
     /**
+     * @ORM\Column(name="role", type="json_array")
+     */
+    private $roles;
+
+    /**
      * Get id
      *
      * @return int
@@ -128,8 +133,6 @@ class User implements UserInterface
      */
     public function setEmail($email)
     {
-        //add email has username 
-        $this->username = $email;
         $this->email = $email;
 
         return $this;
@@ -217,11 +220,18 @@ class User implements UserInterface
         return $this->firstname;
     }
 
-    // interface
-
     public function getRoles()
     {
-        return array('ROLE_USER');
+        $roles = $this->roles;
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     public function getSalt()

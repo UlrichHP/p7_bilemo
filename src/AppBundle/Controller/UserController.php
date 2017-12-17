@@ -9,6 +9,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation as Doc;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * @Route("/api")
@@ -57,7 +58,7 @@ class UserController extends Controller
 
     /**
      * @Rest\Get(
-     *		path = "/users/{id}",
+     *		path = "/user/{id}",
      *		name = "get_user",
      *		requirements = {"id"="\d+"}
      * )
@@ -85,12 +86,13 @@ class UserController extends Controller
 
     /**
      * @Rest\Delete(
-     *     path = "/users/{id}",
+     *     path = "/user/{id}",
      *     name = "delete_user",
      *     requirements = {"id"="\d+"}
      * )
      *
-     *
+     * @Security("has_role('ROLE_ADMIN')")
+     * 
      * @Rest\View(statusCode=204)
      *
      * @Doc\ApiDoc(

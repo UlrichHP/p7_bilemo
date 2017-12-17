@@ -34,7 +34,7 @@ Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
 1. client_secret = CLIENT_SECRET
 1. redirect_uri = REDIRECT_URI
 1. grant_type = password
-1. username = USERNAME
+1. username = YOUR_EMAIL
 1. password = PASSWORD
 
 Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de type Autorisation = 'Bearer ' + le token de l'utilisateur.
@@ -63,7 +63,7 @@ Make a POST request on /oauth/v2/token with the following parameters:
 1. client_secret = CLIENT_SECRET
 1. redirect_uri = REDIRECT_URI
 1. grant_type = password
-1. username = USERNAME
+1. username = YOUR_EMAIL
 1. password = PASSWORD
 
 To access the API, you have to send a request with a header Authorization = 'Bearer ' + the user's token.

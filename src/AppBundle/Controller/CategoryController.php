@@ -34,7 +34,7 @@ class CategoryController extends Controller
 
     /**
      * @Rest\Get(
-     *		path = "/categories/{id}",
+     *		path = "/category/{id}",
      *		name = "get_category",
      *		requirements = {"id"="\d+"}
      * )

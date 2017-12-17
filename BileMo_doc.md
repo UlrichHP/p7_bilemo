@@ -7,9 +7,9 @@
 _Get the list of all categories._
 
 
-## /api/categories/{id} ##
+## /api/category/{id} ##
 
-### `GET` /api/categories/{id} ###
+### `GET` /api/category/{id} ###
 
 _Get one category._
 
@@ -24,6 +24,21 @@ _Get one category._
 
 
 # Products #
+
+## /api/product/{id} ##
+
+### `GET` /api/product/{id} ###
+
+_Get one product._
+
+#### Requirements ####
+
+**id**
+
+  - Requirement: \d+
+  - Type: integer
+  - Description: The product unique identifier.
+
 
 ## /api/products ##
 
@@ -57,21 +72,6 @@ offset:
   * Default: 0
 
 
-## /api/products/{id} ##
-
-### `GET` /api/products/{id} ###
-
-_Get one product._
-
-#### Requirements ####
-
-**id**
-
-  - Requirement: \d+
-  - Type: integer
-  - Description: The product unique identifier.
-
-
 
 # User #
 
@@ -82,16 +82,9 @@ _Get one product._
 _Get current user informations._
 
 
-## /api/users ##
+## /api/user/{id} ##
 
-### `GET` /api/users ###
-
-_Get all users registered._
-
-
-## /api/users/{id} ##
-
-### `DELETE` /api/users/{id} ###
+### `DELETE` /api/user/{id} ###
 
 _Delete one user._
 
@@ -103,7 +96,7 @@ _Delete one user._
   - Description: The user unique identifier.
 
 
-### `GET` /api/users/{id} ###
+### `GET` /api/user/{id} ###
 
 _Get one user._
 
@@ -114,6 +107,13 @@ _Get one user._
   - Requirement: \d+
   - Type: integer
   - Description: The user unique identifier.
+
+
+## /api/users ##
+
+### `GET` /api/users ###
+
+_Get all users registered._
 
 
 ## /register ##
@@ -129,6 +129,12 @@ email:
   * type: [a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}
   * required: true
   * description: User's email.
+
+username:
+
+  * type: 
+  * required: true
+  * description: User's username.
 
 password:
 
@@ -171,3 +177,9 @@ redirect_uri:
   * type: 
   * required: true
   * description: The url where Oauth server will be redirected.
+
+role:
+
+  * type: ROLE_USER|ROLE_ADMIN
+  * required: true
+  * description: Possibility to create an Admin who can delete users.

@@ -77,8 +77,9 @@ class SecurityController extends FOSRestController
      * @Rest\RequestParam(
      *		name = "role",
      *      requirements = "ROLE_USER|ROLE_ADMIN",
-     *		nullable = false,
-     *		description = "Possibility to create an Admin who can delete users."
+     *      default = "ROLE_USER",
+     *		nullable = true,
+     *		description = "Optional, possibility to create an Admin who can delete users."
      * )
      * @Doc\ApiDoc(
      * 		section = "User",

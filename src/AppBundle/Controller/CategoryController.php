@@ -18,7 +18,7 @@ class CategoryController extends Controller
      *		path = "/categories",
      * 		name = "category_list"
      * )
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * @Doc\ApiDoc(
      *		section="Categories",
      * 		resource=true,
@@ -34,11 +34,11 @@ class CategoryController extends Controller
 
     /**
      * @Rest\Get(
-     *		path = "/category/{id}",
+     *		path = "/categories/{id}",
      *		name = "get_category",
      *		requirements = {"id"="\d+"}
      * )
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * @Doc\ApiDoc(
      *		section="Categories",
      *		resource=true,

@@ -7,9 +7,9 @@
 _Get the list of all categories._
 
 
-## /api/category/{id} ##
+## /api/categories/{id} ##
 
-### `GET` /api/category/{id} ###
+### `GET` /api/categories/{id} ###
 
 _Get one category._
 
@@ -24,21 +24,6 @@ _Get one category._
 
 
 # Products #
-
-## /api/product/{id} ##
-
-### `GET` /api/product/{id} ###
-
-_Get one product._
-
-#### Requirements ####
-
-**id**
-
-  - Requirement: \d+
-  - Type: integer
-  - Description: The product unique identifier.
-
 
 ## /api/products ##
 
@@ -72,19 +57,41 @@ offset:
   * Default: 0
 
 
+## /api/products/{id} ##
 
-# User #
+### `GET` /api/products/{id} ###
 
-## /api/user/me ##
+_Get one product._
 
-### `GET` /api/user/me ###
+#### Requirements ####
+
+**id**
+
+  - Requirement: \d+
+  - Type: integer
+  - Description: The product unique identifier.
+
+
+
+# Users #
+
+## /api/users ##
+
+### `GET` /api/users ###
+
+_Get all users registered._
+
+
+## /api/users/me ##
+
+### `GET` /api/users/me ###
 
 _Get current user informations._
 
 
-## /api/user/{id} ##
+## /api/users/{id} ##
 
-### `DELETE` /api/user/{id} ###
+### `DELETE` /api/users/{id} ###
 
 _Delete one user._
 
@@ -96,7 +103,7 @@ _Delete one user._
   - Description: The user unique identifier.
 
 
-### `GET` /api/user/{id} ###
+### `GET` /api/users/{id} ###
 
 _Get one user._
 
@@ -107,13 +114,6 @@ _Get one user._
   - Requirement: \d+
   - Type: integer
   - Description: The user unique identifier.
-
-
-## /api/users ##
-
-### `GET` /api/users ###
-
-_Get all users registered._
 
 
 ## /register ##

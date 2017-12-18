@@ -44,7 +44,7 @@ class ProductController extends Controller
      *     default="0",
      *     description="The pagination offset."
      * )
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * @Doc\ApiDoc(
      *		section="Products",
      * 		resource=true,
@@ -65,11 +65,11 @@ class ProductController extends Controller
 
     /**
      * @Rest\Get(
-     *		path = "/product/{id}",
+     *		path = "/products/{id}",
      *		name = "get_product",
      *		requirements = {"id"="\d+"}
      * )
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * @Doc\ApiDoc(
      *		section="Products",
      *		resource=true,

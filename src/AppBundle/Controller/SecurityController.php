@@ -82,7 +82,7 @@ class SecurityController extends FOSRestController
      *		description = "Optional, possibility to create an Admin who can delete users."
      * )
      * @Doc\ApiDoc(
-     * 		section = "User",
+     * 		section = "Users",
      *		resource = true,
      *		description = "User registration."
      * )

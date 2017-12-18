@@ -18,13 +18,13 @@ class UserController extends Controller
 {
     /**
      * @Rest\Get(
-     *		path = "/user/me",
+     *		path = "/users/me",
      *		name = "get_user_infos"
      * )
      *
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * @Doc\ApiDoc(
-     *		section = "User",
+     *		section = "Users",
      *		resource = true,
      *		description = "Get current user informations."
      * )
@@ -42,10 +42,10 @@ class UserController extends Controller
      *		name = "users_list"
      * )
      * 
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      *
      * @Doc\ApiDoc(
-     *		section = "User",
+     *		section = "Users",
      *		resource = true,
      *		description = "Get all users registered."
      * )
@@ -58,15 +58,15 @@ class UserController extends Controller
 
     /**
      * @Rest\Get(
-     *		path = "/user/{id}",
+     *		path = "/users/{id}",
      *		name = "get_user",
      *		requirements = {"id"="\d+"}
      * )
      *
-     * @Rest\View()
+     * @Rest\View(statusCode=200)
      * 
      * @Doc\ApiDoc(
-     * 		section = "User",
+     * 		section = "Users",
      * 		resource = true,
      *		description = "Get one user.",
      *		requirements={
@@ -86,7 +86,7 @@ class UserController extends Controller
 
     /**
      * @Rest\Delete(
-     *     path = "/user/{id}",
+     *     path = "/users/{id}",
      *     name = "delete_user",
      *     requirements = {"id"="\d+"}
      * )
@@ -98,7 +98,7 @@ class UserController extends Controller
      * @Doc\ApiDoc(
      *     resource=true,
      *     description="Delete one user.",
-     *     section="User",
+     *     section="Users",
      *     requirements={
      *         {
      *             "name"="id",

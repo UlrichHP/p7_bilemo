@@ -18,26 +18,6 @@ class UserController extends Controller
 {
     /**
      * @Rest\Get(
-     *		path = "/users/me",
-     *		name = "get_user_infos"
-     * )
-     *
-     * @Rest\View(statusCode=200)
-     * @Doc\ApiDoc(
-     *		section = "Users",
-     *		resource = true,
-     *		description = "Get current user informations."
-     * )
-     */
-    public function getUserInfoAction(Request $request)
-    {
-        $user = $this->getUser();
-
-        return $user;
-    }
-
-    /**
-     * @Rest\Get(
      *		path = "/users",
      *		name = "users_list"
      * )
@@ -54,6 +34,26 @@ class UserController extends Controller
     {
         $users = $this->getDoctrine()->getManager()->getRepository('AppBundle:User')->findAll();
         return $users;
+    }
+
+    /**
+     * @Rest\Get(
+     *		path = "/users/me",
+     *		name = "get_user_infos"
+     * )
+     *
+     * @Rest\View(statusCode=200)
+     * @Doc\ApiDoc(
+     *		section = "Users",
+     *		resource = true,
+     *		description = "Get current user informations."
+     * )
+     */
+    public function getUserInfoAction(Request $request)
+    {
+        $user = $this->getUser();
+
+        return $user;
     }
 
     /**

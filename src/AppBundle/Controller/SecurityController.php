@@ -68,7 +68,7 @@ class SecurityController extends FOSRestController
      *		name = "grant_type",
      *		requirements = "password|token|code",
      *		nullable = false,
-     *		description = "Grant type requested"
+     *		description = "Grant type requested."
      * )
      * @Rest\RequestParam(
      *		name = "redirect_uri",
@@ -96,6 +96,7 @@ class SecurityController extends FOSRestController
         $user->setLastname($paramFetcher->get('lastname'));
         $user->setFirstname($paramFetcher->get('firstname'));
         $user->setRoles(array($paramFetcher->get('role')));
+        $user->setClient(array($paramFetcher->get('client_id')));
         $errors = $this->get('validator')->validate($user);
         if (count($errors)) {
             $message = 'The JSON sent contains invalid data. Here are the errors you need to correct: ';
@@ -113,7 +114,7 @@ class SecurityController extends FOSRestController
             'client_id'		=> $paramFetcher->get('client_id'),
             'client_secret'	=> $paramFetcher->get('client_secret'),
             'grant_type'	=> $paramFetcher->get('grant_type'),
-            'username'		=> $user->getEmail(),
+            'username'		=> $paramFetcher->get('username'),
             'password'		=> $paramFetcher->get('password'),
             'redirect_uri'	=> $paramFetcher->get('redirect_uri')
         ]);

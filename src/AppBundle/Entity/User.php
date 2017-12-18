@@ -91,6 +91,13 @@ class User implements UserInterface
     private $roles;
 
     /**
+     * @ORM\Column(name="client", type="json_array")
+     * 
+     * @Expose
+     */
+    private $client;
+
+    /**
      * Get id
      *
      * @return int
@@ -232,6 +239,20 @@ class User implements UserInterface
         $this->roles = $roles;
 
         return $this;
+    }
+
+    public function setClient(array $client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    public function getClient()
+    {
+        $client = $this->client;
+
+        return array_unique($client);
     }
 
     public function getSalt()

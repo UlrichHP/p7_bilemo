@@ -170,7 +170,7 @@ grant_type:
 
   * type: password|token|code
   * required: true
-  * description: Grant type requested
+  * description: Grant type requested.
 
 redirect_uri:
 

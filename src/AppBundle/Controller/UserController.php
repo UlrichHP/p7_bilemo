@@ -41,7 +41,7 @@ class UserController extends Controller
      *		path = "/users",
      *		name = "users_list"
      * )
-     *
+     * 
      * @Rest\View()
      *
      * @Doc\ApiDoc(

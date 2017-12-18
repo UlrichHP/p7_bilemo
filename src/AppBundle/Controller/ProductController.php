@@ -18,7 +18,7 @@ class ProductController extends Controller
     /**
      * @Rest\Get(
      *		path = "/products",
-     * 		name = "product_list"
+     * 		name = "products_list"
      * )
      * @Rest\QueryParam(
      *     name="keyword",

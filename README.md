@@ -21,6 +21,7 @@ Clonez le repository GitHub et tapez les commandes suivantes :
 
 Pour créer un Client :
 - php bin/console CreateClient --redirect_url=WEBSITE_URL
+
 Vos identifiants d'API (client_id et client_secret) seront écrits en réponse.
 
 Comment créer un utilisateur :
@@ -41,6 +42,8 @@ Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de
 
 La documentation de l'API se trouve dans le fichier BileMo_doc.md et vous pouvez également la consulter en ligne à l'adresse /api/doc.
 
+Vous pouvez également tester l'API avec [BileMo_App](https://github.com/Maxxxiimus92/p7_bilemo_app).
+
 Clone the GitHub repository and execute the following commands :
 - Enter your database settings in app/config/parameters.yml
 - composer install
@@ -50,6 +53,7 @@ Clone the GitHub repository and execute the following commands :
 
 To create a Client:
 - php bin/console CreateClient --redirect_url=WEBSITE_URL
+
 Your API credentials (client_id and client_secret) will be written in response.
 
 How to create a user:
@@ -69,6 +73,8 @@ Make a POST request on /oauth/v2/token with the following parameters:
 To access the API, you have to send a request with a header Authorization = 'Bearer ' + the user's token.
 
 The API documentation is located in the BileMo_doc.md file and you can see it online at /api/doc.
+
+You can also test this API with [BileMo_App](https://github.com/Maxxxiimus92/p7_bilemo_app).
 
 ## Symfony Standard Edition
 

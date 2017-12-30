@@ -28,7 +28,7 @@ class CreateClientCommand extends ContainerAwareCommand
         $clientManager = $this->getContainer()->get('fos_oauth_server.client_manager.default');
         $client = $clientManager->createClient();
         $client->setRedirectUris(array($url));
-        $client->setAllowedGrantTypes(array('token', 'authorization_code', 'password'));
+        $client->setAllowedGrantTypes(array('password', 'refresh_token'));
         $clientManager->updateClient($client);
 
         $output->writeln("Added a new client with client_id : <info>".$client->getPublicId()."</info> and client_secret : <info>".$client->getSecret()."</info>");

@@ -27,16 +27,23 @@ Vos identifiants d'API (client_id et client_secret) seront écrits en réponse.
 Comment créer un utilisateur :
 - Voir BileMo_doc : /register
 
-Les méthodes d'autorisation de cette API sont : Implicit, Password et Authorization Code.
+La méthode d'autorisation de cette API est : Resource Owner Password Credentials Grant.
 
-Comment avoir un Token :
+Comment avoir un Token d'accès :
 Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
-- client_id = CLIENT_ID
-- client_secret = CLIENT_SECRET
+- client_id = YOUR_CLIENT_ID
+- client_secret = YOUR_CLIENT_SECRET
 - redirect_uri = REDIRECT_URI (Optionnel)
 - grant_type = password
-- username = USERNAME
-- password = PASSWORD
+- username = YOUR_USERNAME
+- password = YOUR_PASSWORD
+
+Comment avoir un Token de rafraîchissement :
+Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
+- client_id = YOUR_CLIENT_ID
+- client_secret = YOUR_CLIENT_SECRET
+- grant_type = refresh_token
+- refresh_token = YOUR_REFRESH_TOKEN
 
 Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de type Authorization = 'Bearer ' + le token de l'utilisateur.
 
@@ -59,16 +66,23 @@ Your API credentials (client_id and client_secret) will be written in response.
 How to create a user:
 - See BileMo_doc : /register
 
-The Authorizations type for this API are : Implicit, Password and Authorization Code.
+The Authorization type for this API is : Resource Owner Password Credentials Grant.
 
-How to get a Token:
+How to get an Access Token:
 Make a POST request on /oauth/v2/token with the following parameters:
-- client_id = CLIENT_ID
-- client_secret = CLIENT_SECRET
+- client_id = YOUR_CLIENT_ID
+- client_secret = YOUR_CLIENT_SECRET
 - redirect_uri = REDIRECT_URI (Optional)
 - grant_type = password
-- username = USERNAME
-- password = PASSWORD
+- username = YOUR_USERNAME
+- password = YOUR_PASSWORD
+
+How to get a Refresh Token:
+Make a POST request on /oauth/v2/token with the following parameters:
+- client_id = YOUR_CLIENT_ID
+- client_secret = YOUR_CLIENT_SECRET
+- grant_type = refresh_token
+- refresh_token = YOUR_REFRESH_TOKEN
 
 To access the API, you have to send a request with a header Authorization = 'Bearer ' + the user's token.
 

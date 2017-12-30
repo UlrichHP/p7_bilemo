@@ -158,19 +158,19 @@ client_id:
 
   * type: [0-9]+_[a-zA-Z0-9]+
   * required: true
-  * description: The client_id with the client secret id.
+  * description: The client_id which identify the Client.
 
 client_secret:
 
   * type: [a-zA-Z0-9]+
-  * required: false
-  * description: Client_secret used for authentication code and password grant type.
+  * required: true
+  * description: Client_secret used for password grant type.
 
 grant_type:
 
-  * type: password|token|code
-  * required: true
-  * description: Grant type requested.
+  * type: password
+  * required: false
+  * description: Password Grant type by default.
 
 redirect_uri:
 

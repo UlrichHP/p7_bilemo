@@ -56,19 +56,20 @@ class SecurityController extends FOSRestController
      *		name = "client_id",
      *		requirements = "[0-9]+_[a-zA-Z0-9]+",
      *		nullable = false,
-     *		description = "The client_id with the client secret id."
+     *		description = "The client_id which identify the Client."
      * )
      * @Rest\RequestParam(
      *		name = "client_secret",
      *		requirements = "[a-zA-Z0-9]+",
-     *		nullable = true,
-     *		description = "Client_secret used for authentication code and password grant type."
+     *		nullable = false,
+     *		description = "Client_secret used for password grant type."
      * )
      * @Rest\RequestParam(
      *		name = "grant_type",
-     *		requirements = "password|token|code",
+     *		requirements = "password",
+     *      default = "password",
      *		nullable = false,
-     *		description = "Grant type requested."
+     *		description = "Password Grant type by default."
      * )
      * @Rest\RequestParam(
      *		name = "redirect_uri",

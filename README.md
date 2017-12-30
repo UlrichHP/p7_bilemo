@@ -38,7 +38,7 @@ Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
 - username = YOUR_USERNAME
 - password = YOUR_PASSWORD
 
-Comment avoir un Token de rafraîchissement :
+Comment utiliser un Token de rafraîchissement :
 Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
 - client_id = YOUR_CLIENT_ID
 - client_secret = YOUR_CLIENT_SECRET
@@ -77,7 +77,7 @@ Make a POST request on /oauth/v2/token with the following parameters:
 - username = YOUR_USERNAME
 - password = YOUR_PASSWORD
 
-How to get a Refresh Token:
+How to use a Refresh Token:
 Make a POST request on /oauth/v2/token with the following parameters:
 - client_id = YOUR_CLIENT_ID
 - client_secret = YOUR_CLIENT_SECRET

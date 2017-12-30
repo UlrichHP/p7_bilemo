@@ -29,6 +29,7 @@ class AccessToken extends BaseAccessToken
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\joinColumn(onDelete="SET NULL")
      */
     protected $user;
 }

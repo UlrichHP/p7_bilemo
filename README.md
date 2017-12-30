@@ -33,7 +33,7 @@ Comment avoir un Token :
 Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
 - client_id = CLIENT_ID
 - client_secret = CLIENT_SECRET
-- redirect_uri = REDIRECT_URI (Optional)
+- redirect_uri = REDIRECT_URI (Optionnel)
 - grant_type = password
 - username = USERNAME
 - password = PASSWORD

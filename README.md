@@ -38,7 +38,7 @@ Faites une requête POST sur /oauth/v2/token avec les paramètres suivants :
 - username = USERNAME
 - password = PASSWORD
 
-Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de type Autorisation = 'Bearer ' + le token de l'utilisateur.
+Pour accèder à l'API, il faut ensuite envoyer une requête avec un en-tête de type Authorization = 'Bearer ' + le token de l'utilisateur.
 
 La documentation de l'API se trouve dans le fichier BileMo_doc.md et vous pouvez également la consulter en ligne à l'adresse /api/doc.
 
